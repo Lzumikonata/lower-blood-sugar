@@ -80,11 +80,16 @@ module.exports = {
 	create: (req, res) =>{
 		const {username, password} = req.allParams()
 		if (!username || !password) return res.badRequest({message: '需要合适的用户名或密码'})
-
+		// 用户注册类型总是member
 		UserService.createUser({
-
+			username: username,
+			password: password,
+			status: 'Unverified',
+			userType: 'member'
 		}, (err, created) =>{
-
+			if (err) return res.badRequest()
+			delete created.password
+			return res.ok(created)
 		})
 	},
 
