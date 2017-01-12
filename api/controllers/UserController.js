@@ -80,6 +80,9 @@ module.exports = {
 	create: (req, res) =>{
 		const {username, password} = req.allParams()
 		if (!username || !password) return res.badRequest({message: '需要合适的用户名或密码'})
+		if (password.length < 6 || password.length > 22){
+			return res.badRequest({message: '密码不符合规范'})
+		}
 		// 用户注册类型总是member
 		UserService.createUser({
 			username: username,
@@ -93,7 +96,23 @@ module.exports = {
 		})
 	},
 
+	/**
+	 *
+	 * @api {PUT} http://lower-blood-sugar/user [updateSelf]
+	 * @apiGroup User
+	 * @apiDescription 用户更新信息
+	 * @apiParam (body) {string} password 用户密码
+	 * @apiUse CODE_200
+	 * @apiUse CODE_500
+	 */
 	update: (req, res) =>{
+		const {password} = req.allParams()
+		if (password.length < 6 || password.length > 22){
+			return res.badRequest({message: '密码不符合规范'})
+		}
+
+
+
 
 	},
 
