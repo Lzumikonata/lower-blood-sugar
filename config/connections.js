@@ -18,6 +18,8 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
+const {mongo} = require('../ecosystem.config')
+const env = process.env.NODE_ENV == 'production'? 'production': 'development'
 
 module.exports.connections = {
 
@@ -56,14 +58,7 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  // someMongodbServer: {
-  //   adapter: 'sails-mongo',
-  //   host: 'localhost',
-  //   port: 27017,
-  //   user: 'username', //optional
-  //   password: 'password', //optional
-  //   database: 'your_mongo_db_name_here' //optional
-  // },
+  mongo: mongo[env],
 
   /***************************************************************************
   *                                                                          *
