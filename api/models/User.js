@@ -31,6 +31,10 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
+		status: {
+			type: 'string',
+			enum: ['Unverified', 'Verified']
+		}
 	},
 	beforeCreate: (values, cb) =>{
 		bcrypt.genSalt(10, (err, salt) =>{
