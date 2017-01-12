@@ -1,9 +1,4 @@
 /**
- *
- * @param req
- * @param res
- * @param next {}
- * @returns {}
  * @description :: 接口登录认证逻辑
  */
 
