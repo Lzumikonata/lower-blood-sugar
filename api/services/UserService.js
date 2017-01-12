@@ -3,13 +3,22 @@
  */
 
 module.exports = {
-	findUserForPhone: (phone, done) =>{
+	findUserForName: (username, done) =>{
 		User
-			.find({phone: phone})
+			.find({username: username})
 			.exec((err, userArray) =>{
 				if (err) return cb(err)
 				cb(null, userArray)
 			})
-	}
+	},
+
+	createUser: (user, done) =>{
+		User
+			.create(user)
+			.exec((err, created) =>{
+				if (err) return cb(err)
+				cb(null, created)
+			})
+	},
 
 }

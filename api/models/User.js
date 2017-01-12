@@ -27,10 +27,6 @@ module.exports = {
 		email: {
 			type: 'email'
 		},
-		phone: {
-			type: 'string',
-			required: true
-		},
 		status: {
 			type: 'string',
 			enum: ['Unverified', 'Verified']
