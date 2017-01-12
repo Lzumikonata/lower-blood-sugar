@@ -72,12 +72,16 @@ module.exports = {
 	 * @api {POST} http://lower-blood-sugar/user [register]
 	 * @apiGroup User
 	 * @apiDescription 用户注册
-	 * @apiParam (body) {string} email 用户名
+	 * @apiParam (body) {string} phone 用户名，手机号码
 	 * @apiParam (body) {string} password 用户密码
 	 * @apiUse CODE_200
 	 * @apiUse CODE_500
 	 */
 	create: (req, res) =>{
+		const {phone, password} = req.allParams()
+		if (!phone || !password) return res.badRequest({message: '需要合适的用户名与密码'})
+
+
 
 	},
 
