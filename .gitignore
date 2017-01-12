@@ -9,4 +9,4 @@ bundle.min.js
 rev-manifest.json
 bundle.js
 dist
-ecosystem.config.js
+/ecosystem.config.js
