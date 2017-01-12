@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+*~
+.DS_Store
+.idea
+.sass-cache
+*.map
+node_modules
+bundle.min.js
+rev-manifest.json
+bundle.js
+dist
+ecosystem.config.js
